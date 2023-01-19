@@ -1,0 +1,42 @@
+
+#include <iostream>
+using namespace std;
+
+void one_right_rotate(int arr[],int length)
+ {
+     int temp = arr[length -1];
+     for(int i= length -1; i>0;i--)
+     {
+         arr[i] = arr[i-1];
+     }
+     arr[0] = temp;
+ }
+ 
+void right_rotation_with_step(int arr[], int length, int step)
+{
+    for(int i=0;i<step;i++)
+    {
+        one_right_rotate(arr,length);
+    }
+}
+
+int main()
+{
+    int arr[] = {10,20,30,40,50,60,70,80,90,100};
+    int length =10;
+    int step =5;
+    if(step %10 !=0)
+    {
+         right_rotation_with_step(arr, length, step);
+    }
+    else
+    {
+        cout<<"\n  no need to shift output:\n";
+    }
+    for(int j=0;j<10;j++)
+    {
+        cout<<arr[j]<<" ";
+    }
+    return 0;
+}
+
