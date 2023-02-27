@@ -1,0 +1,28 @@
+/******************************************************************************
+Variadic function implimantations
+*******************************************************************************/
+#include <iostream>
+#include <stdarg.h>
+using namespace std;
+
+int getsum(int count,...)
+{
+    int sum =0;
+    va_list list;
+    va_start(list,count);
+    for(int i=0;i<count; i++)
+    {
+        int n = va_arg(list,int);
+        sum = sum + n;
+      
+    }
+    va_end(list);
+    return sum;
+}
+
+int main()
+{
+    cout<<"\nsum of 2 number : "<<getsum(2,3,5);     //sum of 2 number : 8
+    cout<<"\nsum of 3 number : "<<getsum(3,2,2,5);   //sum of 2 number : 9
+    return 0;
+}
