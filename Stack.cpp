@@ -80,5 +80,7 @@ int main() {
     push(stack, 400);
     poppedvalue = pop(stack);
     std::cout << "Popped_Value is : "<< poppedvalue<<"\n";
+    free( stack );
+    stack = nullptr;
     return 0;
 }
