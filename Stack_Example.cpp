@@ -89,5 +89,7 @@ int main() {
     poppedvalue = pop(stack);
     std::cout << "\nPopped_Value is : "<< poppedvalue;
     std::cout << "\nLast value After Pop: "<< stack->array[3]<<"\n";
+    free( stack );
+    stack = nullptr;
     return 0;
 }
