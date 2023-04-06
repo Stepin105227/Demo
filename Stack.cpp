@@ -7,15 +7,15 @@ struct array_stack
     int *array;
 };
 
-struct array_stack* stack_initialization( struct array_stack* stack,int f_capacity);
+struct array_stack* stack_initialization( int f_capacity);
 bool is_full(struct array_stack* f_stack);
 bool is_empty(struct array_stack* f_stack);
 void push(struct array_stack* f_stack,int f_data);
 int pop(struct array_stack* f_stack);
 
-struct array_stack* stack_initialization( struct array_stack* stack, int a_capacity)
+struct array_stack* stack_initialization( int a_capacity)
 {
-   // struct array_stack* stack;
+    struct array_stack* stack;
     stack = (array_stack*)malloc(sizeof(array_stack));
     stack->top = -1;
     stack->capacity = a_capacity;
@@ -71,7 +71,7 @@ int main() {
     int poppedvalue;
     
     struct array_stack* stack;
-    stack = stack_initialization(stack,capacity);
+    stack = stack_initialization(capacity);
     std::cout << "Hello world!\n";
     pop(stack);
     push(stack, 10);
