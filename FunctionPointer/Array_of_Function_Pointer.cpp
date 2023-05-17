@@ -3,17 +3,17 @@
 #include <iostream>
 using namespace std;
 
-int add(int x, int y) { return (x+y);}
-int Sub(int x, int y) {  return (x-y);}
-int square(int x) {  return (x*x);}
-int cube(int x) {  return (x*x*x);}
+int add(int data_1, int data_2) { return (data_1 + data_2);}
+int Sub(int data_1, int data_2) { return (data_1 - data_2);}
+int square(int data) {  return (data * data);}
+int cube(int data) {  return (data * data * data);}
 
-typedef int (*fptr) (int, int);  // 1st methord one
+typedef int (*fptr) (int, int);  // 1st methord one (with typedef)
 
 int main()
 {
     int result;
-    int (* array_fptr_old[2])(int) = {square, cube}; // 2nd methord one
+    int (* array_fptr_old[2])(int) = {square, cube}; // 2nd methord one (without tpyedef)
     fptr array_fptr[2] = {add, Sub};
     result = array_fptr[0](10,5);
     cout<<"ADD(10,5) : "<<result<<"\n";
