@@ -1,3 +1,4 @@
+//virtual function is the example of run time Polymorphism (late binding)
 #include <iostream>
 using namespace std;
 class A
