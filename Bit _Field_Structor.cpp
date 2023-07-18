@@ -1,4 +1,4 @@
-// Bit field structor for display configuration
+/* Bit field structor for display configuration */
 #include <stdio.h>
 #include <stdint.h>
 struct Bit_field_struct {
