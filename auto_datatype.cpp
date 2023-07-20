@@ -1,3 +1,7 @@
+/* 
+auto keyword: The auto keyword specifies that the type of the variable that is being declared will 
+be automatically deducted from its initializer
+*/
 #include <iostream>
 #include <stdint.h>
 void add(auto x, auto y);
