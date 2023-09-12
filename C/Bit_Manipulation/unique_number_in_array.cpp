@@ -1,3 +1,6 @@
+/* Single number in array. given an array where every element appears 
+twice except for one, find the element using bitwise operations */
+
 #include <iostream>
 #include <stdio.h>
 
