@@ -2,7 +2,7 @@
 #include <string.h>
 void updated_string(char *str);
 int main() {
-    char str[] = "MY name is dushyant";
+    char str[] = "MY name Is dushyant";
     printf("\nupdated string = %s",str);
     updated_string(str);
     return 0;
@@ -33,5 +33,6 @@ void updated_string(char *str)
           }
         }
     }
+    //"mY Name is Dushyant";
     printf("\nupdated string = %s",str);
 }
