@@ -1,24 +1,19 @@
 // Swapping little endian to big endian or big endian to little endian
-#include <iostream>
-#include<stdint.h>
-using namespace std;
-uint32_t swap_endianness(uint32_t num);
-uint32_t swap_endianness(uint32_t num)
+#include <stdio.h>
+#include <stdint.h>
+uint32_t swaping_endian(uint32_t data)
 {
-    uint32_t swaped_data,byte_1,byte_2,byte_3,byte_4;
-    byte_1 = (num <<24) & 0xFF000000;
-    byte_2 = (num <<8) & 0x00FF0000;
-    byte_3 = (num >>8) &  0x0000FF00;
-    byte_4 = (num >>24) &  0x000000FF;
-    printf("\n%x",byte_1);          //78000000
-    printf("\n%x",byte_2);          //560000
-    printf("\n%x",byte_3);          //3400
-    printf("\n%x",byte_4);          //12
-    swaped_data = byte_1 |byte_2|byte_3|byte_4;
-    printf("\n%x",swaped_data); //78563412
+    uint32_t updated_data =0;
+    updated_data |= (data & 0x000000FF)<<24;
+    updated_data |= (data & 0x0000FF00)<<8;
+    updated_data |= (data & 0x00FF0000)>>8;
+    updated_data |= (data & 0xFF000000)>>24;
+    return updated_data;
 }
 int main() {
-    uint32_t data = 0x12345678;
-    swap_endianness(data);
+    uint32_t data = 0x11223344;
+    printf("\n%x",data);
+    uint32_t updated_data = swaping_endian(data);
+    printf("\n%x",updated_data);
     return 0;
 }
